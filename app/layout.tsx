@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { ThemeProvider } from "@mui/material";
+import { Container, ThemeProvider } from "@mui/material";
 import { theme } from "./_assets/theme";
 
 const vazir = Vazirmatn({ subsets: ["latin"] });
@@ -19,11 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>
-        <body className={vazir.className}>{children}</body>
-        </ThemeProvider>
-      </AppRouterCacheProvider>
+      <body className={vazir.className}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <Container maxWidth='sm'>
+              {children}
+            </Container>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
