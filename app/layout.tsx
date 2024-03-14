@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { Container, ThemeProvider } from "@mui/material";
+import { Box, Container, ThemeProvider } from "@mui/material";
 import { theme } from "./_assets/theme";
 import { Header } from "./_components";
 
@@ -23,9 +23,11 @@ export default function RootLayout({
       <body className={vazir.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Container maxWidth='xl'>
-              <Header />
-              {children}
+            <Header />
+            <Container maxWidth='lg' >
+              <Box py={4}>
+                {children}
+              </Box>
             </Container>
           </ThemeProvider>
         </AppRouterCacheProvider>
