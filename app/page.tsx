@@ -1,7 +1,5 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { CenteredPage, CustomLink } from "./_components";
 
 export const metadata: Metadata = {
