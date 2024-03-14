@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Container, ThemeProvider } from "@mui/material";
 import { theme } from "./_assets/theme";
+import { Header } from "./_components";
 
 const vazir = Vazirmatn({ subsets: ["latin"] });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body className={vazir.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Container maxWidth='sm'>
+            <Container maxWidth='xl'>
+              <Header />
               {children}
             </Container>
           </ThemeProvider>
