@@ -18,9 +18,12 @@ export const theme = createTheme({
             light: {
                 primary: 'rgba(153, 153, 179, 1)',
 
-            }
+            },
+            black: 'rgba(48, 51, 55, 1)'
+        },
+        navy: {
+            75: 'rgba(102, 102, 140, 1)'
         }
-        ,
     }
 })
 
@@ -28,11 +31,20 @@ export const theme = createTheme({
 declare module '@mui/material/styles' {
     interface Palette {
         body: Palette['primary'],
-        appText: { light: Palette['primary'] }
+        appText: {
+            light: Palette['primary'], black: string, navy: {
+                75: string
+            }
+        }
     }
 
     interface PaletteOptions {
         body?: PaletteOptions['primary'],
-        appText?: { light: { primary: string } };
+        appText?: {
+            light: { primary: string }, black: string, 
+        };
+        navy: {
+            75: string
+        }
     }
 }
