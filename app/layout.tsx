@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Box, Container, ThemeProvider } from "@mui/material";
 import { theme } from "./_assets/theme";
 import { Header } from "./_components";
+import 'swiper/css';
 
 const vazir = Vazirmatn({ subsets: ["latin"] });
 
