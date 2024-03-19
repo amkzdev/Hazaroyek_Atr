@@ -9,6 +9,6 @@ export const HeaderContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth:'1440px',
+    // maxWidth:'1440px',
     margin: '0 auto',
 })) as typeof Box

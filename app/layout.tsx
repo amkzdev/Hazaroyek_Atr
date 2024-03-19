@@ -25,8 +25,8 @@ export default function RootLayout({
       <body className={vazir.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
+            <Container maxWidth='xl' >
             <Header />
-            <Container maxWidth='lg' >
               <Box py={4}>
                 {children}
               </Box>
