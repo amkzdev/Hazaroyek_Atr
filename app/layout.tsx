@@ -6,6 +6,7 @@ import { Box, Container, ThemeProvider } from "@mui/material";
 import { theme } from "./_assets/theme";
 import { Header } from "./_components";
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 const vazir = Vazirmatn({ subsets: ["latin"] });
 
