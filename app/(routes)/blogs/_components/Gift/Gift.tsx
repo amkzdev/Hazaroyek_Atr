@@ -18,21 +18,50 @@ const ImageFrame = styled(Box)(({ theme }) => ({
 })) as typeof Box
 
 
+const Container = styled(Box)(({ theme }) => ({
+    backgroundColor: theme.palette.body.light,
+    display: 'flex',
+    justifyContent: 'space-between',
+    [theme.breakpoints.up('md')]: { flexDirection: 'row' },
+    [theme.breakpoints.down('md')]: { flexDirection: 'column' },
+    width: '100%',
+    [theme.breakpoints.up('md')]: { paddingRight: 0 },
+    [theme.breakpoints.up('md')]: { padding: theme.spacing(8) }
+})) as typeof Box
+
+
+
+const FirstRow = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: { order: 1 },
+    order: 2,
+    position: 'relative',
+    boxSizing: 'border-box',
+    [theme.spacing('md')]: { paddingLeft: 0 },
+    paddingLeft: theme.spacing(12),
+    display: 'flex',
+    justifyContent: 'start',
+    flexDirection: 'row',
+    flex: 1
+})) as typeof Box
+
+
+
 export const Gift = () => {
     return (
-        <Box sx={{ backgroundColor: 'body.light', display: 'flex', justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' }, width: '100%', p: { md: 8 }, pr: { md: 0 } }}>
-            <Box sx={{ order: { xs: 2, md: 1 }, position: 'relative', boxSizing: 'border-box', pl: { xs: 12, md: 0 }, display: 'flex', justifyContent: 'start', flexDirection: 'row', flex: 1 }}>
+        <Container>
+
+            <FirstRow>
                 <ImageFrame>
                     <Image src={womanGift} alt='gift' fill style={{ objectFit: 'contain', aspectRatio: 1 }} />
                 </ImageFrame>
-            </Box>
+            </FirstRow>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 3, md: 7 }, alignItems: 'center', justifyContent: 'center', p: 4, order: { xs: 1, md: 2 } }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 7 }, alignItems: 'center', justifyContent: 'center', p: 6, order: { xs: 1, md: 2 } }}>
                 <Typography color={'appText.black'} fontSize={{ xs: 24, md: 30 }} fontWeight={'bold'}>یک هدیه برای شما...</Typography>
                 <Typography variant='subtitle2' fontWeight={500} color={'navy.75'} align='center' sx={{ maxWidth: { md: '600px' } }} fontSize={{ xs: 16, md: 20 }}>گزیده‌ای از برترین مقالات تخصصی و آموزشی در مورد عطرهای روز دنیا برای آشنایی ، بحس و تبادل درباره آن‌ها. نوشته شده و یا ترجمه شده توسط برترین متخصصین عطر ایران</Typography>
-                <PrimaryButton>ثبت نام و ثبت ایمیل</PrimaryButton>
+                <PrimaryButton href='/#'>ثبت نام و ثبت ایمیل</PrimaryButton>
             </Box>
 
-        </Box>
+        </Container>
     )
 }
