@@ -25,8 +25,8 @@ const Container = styled(Box)(({ theme }) => ({
     [theme.breakpoints.up('md')]: { flexDirection: 'row' },
     [theme.breakpoints.down('md')]: { flexDirection: 'column' },
     width: '100%',
-    [theme.breakpoints.up('md')]: { paddingRight: 0 },
-    [theme.breakpoints.up('md')]: { padding: theme.spacing(8) }
+    [theme.breakpoints.up('md')]: { padding: theme.spacing(8)  , paddingRight: 0},
+    boxSizing:'border-box'
 })) as typeof Box
 
 
