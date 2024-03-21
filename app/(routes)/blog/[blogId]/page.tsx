@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import React from 'react'
 import { PageContainer } from './components/PageContainer'
-import { Shortcut } from '@/_components'
+import { Gift, Shortcut } from '@/_components'
+import { Breadcrumbs } from './components'
 
 export const metadata: Metadata = {
     title: 'صفحه تک مقاله'
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 export default function page() {
     return (
         <PageContainer>
+            <Breadcrumbs/>
+            <Gift/>
             <Shortcut/>
         </PageContainer>
     )
