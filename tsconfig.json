@@ -32,7 +32,13 @@
       ],
       "@assets/*": [
         "./_assets/*"
-      ]
+      ],
+      "@types": [
+        "./_types"
+      ],
+      "@icons": [
+        "./_assets/icons"
+      ],
     }
   },
   "include": [
