@@ -17,6 +17,16 @@ export interface BlogAuthorType {
     articlesNumber: number
 }
 
+export interface CommentType {
+    id: string,
+    fullname: string,
+    date: string,
+    description: string,
+    likesCount: number,
+    dislikeCount: number,
+    img: string
+}
+
 export interface BlogType {
     id: string,
     author: BlogAuthorType,
@@ -26,8 +36,11 @@ export interface BlogType {
     description: string,
     img: string,
     subSections?: Array<{
-        title: string ,
+        title: string,
         id: string,
         description: string ///String Or Html
-    }>
+    }>,
+    commentsCount: number,
+    commentsUserCount: number,
+    comments?: Array<CommentType>
 }
