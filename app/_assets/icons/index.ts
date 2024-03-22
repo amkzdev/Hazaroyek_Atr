@@ -1,3 +1,5 @@
 export { ArrowDropLeft } from './ArrowDropLeft'
 export { View } from './View'
 export { Chat } from './Chat'
+export { Telegram } from './Telegram'
+export { Insta } from './Insta'
