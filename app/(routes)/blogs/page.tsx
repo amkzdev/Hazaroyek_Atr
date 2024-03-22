@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import { Metadata } from 'next'
 import React from 'react'
 import { Breadcrumbs } from './_components/Breadcrumbs'
-import { PageContainer, Resourses, Title } from './_components'
+import { Authors, PageContainer, Resourses, Title } from './_components'
 import { Shortcut, Gift } from '@/_components'
 
 
@@ -18,6 +18,7 @@ export default function page() {
       <Resourses />
       <Shortcut />
       <Gift />
+      <Authors/>
     </PageContainer>
   )
 }
