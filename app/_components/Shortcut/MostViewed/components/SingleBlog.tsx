@@ -61,7 +61,7 @@ export const SingleBlog = ({ title, description, img, comments, date, id, view }
             </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Typography color={'appText.black'} sx={{ height: { lg: '4rem' }, WebkitLineClamp: 2, textOverflow: 'ellipsis', overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }} fontWeight={500} fontSize={{ xs: 16, lg: 20 }}>{description} {description}</Typography>
+                <Typography color={'appText.black'} sx={{ height: { lg: '4rem' }, WebkitLineClamp: 2, textOverflow: 'ellipsis', overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' }} fontWeight={500} fontSize={{ xs: 16, lg: 20 }}>{title} {description}</Typography>
 
                 <Typography color='appText.light.primary' component={'p'} sx={{ WebkitLineClamp: 3, textOverflow: 'ellipsis', overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical', height: '6rem' }}>{description}</Typography>
 
