@@ -36,10 +36,8 @@ const Description = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.down('lg')]: {
         maxHeight: '6rem',
     },
+    [theme.breakpoints.down('lg')]:{textAlign:'center'},
     textAlign: 'right',
-    // [theme.breakpoints.up('lg')]: {
-    //     width: '700px'
-    // },
     lineHeight: '1.5rem',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
