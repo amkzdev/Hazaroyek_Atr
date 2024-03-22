@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import React from 'react'
 import { Breadcrumbs } from './_components/Breadcrumbs'
 import { Authors, PageContainer, Resourses, Title } from './_components'
-import { Shortcut, Gift } from '@/_components'
+import { Shortcut, Gift, Divider } from '@components'
 
 
 export const metadata: Metadata = {
@@ -15,10 +15,12 @@ export default function page() {
     <PageContainer>
       <Breadcrumbs />
       <Title />
+      <Divider />
       <Resourses />
+      <Divider />
       <Shortcut />
       <Gift />
-      <Authors/>
+      <Authors />
     </PageContainer>
   )
 }

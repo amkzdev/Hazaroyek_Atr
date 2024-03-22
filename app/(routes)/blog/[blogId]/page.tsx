@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import React from 'react'
 import { PageContainer } from './components/PageContainer'
-import { Gift, Shortcut } from '@/_components'
+import { Divider, Gift, Shortcut } from '@/_components'
 import { Author, Breadcrumbs } from './components'
 import { blogDetail} from './data.mock'
 
@@ -13,6 +13,7 @@ export default function page() {
     return (
         <PageContainer>
             <Breadcrumbs/>
+            <Divider/>
             <Author {...blogDetail.author}/>
             <Gift/>
             <Shortcut/>
