@@ -7,7 +7,7 @@ export const Breadcrumbs = () => {
         <MuiBread separator='>'>
             <Typography color='body.dark'>خانه</Typography>
             <Typography  color={'body.dark'}>وبلاگ</Typography>
-            <Typography  color={'appText.light.secondary'}>سرتیتر مقاله شماره یک</Typography>
+            <Typography  color={'appText.light.secondary'}>تیتر مقاله</Typography>
         </MuiBread>
     )
 }
