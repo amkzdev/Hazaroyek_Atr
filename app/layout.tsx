@@ -7,6 +7,7 @@ import { theme } from "./_assets/theme";
 import { Footer, Header } from "./_components";
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const vazir = Vazirmatn({ subsets: ["latin"] });
 
