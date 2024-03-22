@@ -12,16 +12,20 @@ const TagComponent = styled(Link)(({ theme }) => ({
     borderRadius: theme.spacing(1),
     color: theme.palette.body.secondary,
     textDecoration: 'none',
-    backgroundColor:theme.palette.red[25],
-    fontSize:14,
-    [theme.breakpoints.down('lg')]:{
-        fontSize:12
+    backgroundColor: theme.palette.red[25],
+    fontSize: 14,
+    [theme.breakpoints.down('lg')]: {
+        fontSize: 12
     }
 })) as typeof Link
 
 export const Tags = ({ tags }: { tags: BlogType['tags'] }) => {
+
+    if (tags?.length == 0)
+        return <></>
+        
     return (
-        <Box sx={{ borderRadius: 2.75, p:2, display: 'flex', flexDirection: 'column' , alignItems:{xs:'center' , lg:'start'}, gap: 2, backgroundColor: 'body.light' , flexWrap:'wrap' }}>
+        <Box sx={{ borderRadius: 2.75, p: 2, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', lg: 'start' }, gap: 2, backgroundColor: 'body.light', flexWrap: 'wrap' }}>
 
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1.5, color: 'appText.light.primary', alignItems: 'center' }}>
                 <Tag />
