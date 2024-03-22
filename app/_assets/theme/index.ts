@@ -18,7 +18,7 @@ export const theme = createTheme({
         },
         appText: {
             light: {
-                primary: 'rgba(153, 153, 179, 1)',
+                primary: 'rgba(51, 51, 102, 1)',
                 secondary: 'rgba(153, 153, 179, 1)'
 
             },
