@@ -16,3 +16,7 @@ export interface BlogAuthorType {
     instagram: string,
     articlesNumber: number
 }
+
+export interface BlogType {
+    author:BlogAuthorType
+}
