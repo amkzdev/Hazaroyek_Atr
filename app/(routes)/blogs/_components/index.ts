@@ -1,4 +1,5 @@
 export { Title } from './Title'
 export { PageContainer } from './PageContainer'
+export { TopBlogs } from './TopBlogs/TopBlogs'
 export { Resourses } from './Resourses/Resourses'
 export { Authors } from './Authors/Authors'
