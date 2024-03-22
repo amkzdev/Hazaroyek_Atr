@@ -28,17 +28,22 @@ const ItemFrame = styled(Link)(({ theme }) => ({
 
 const Description = styled(Typography)(({ theme }) => ({
     WebkitLineClamp: 5,
-    height: '7.5rem',
+    [theme.breakpoints.up('lg')]: {
+        height: '7.5rem',
+    },
+    [theme.breakpoints.down('lg')]: {
+        maxHeight: '7.5rem',
+    },
     textAlign: 'center',
-    [theme.breakpoints.up('lg')]:{
-        width:'350px'
+    [theme.breakpoints.up('lg')]: {
+        width: '350px'
     },
     lineHeight: '1.5rem',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     display: "-webkit-box",
     WebkitBoxOrient: 'vertical',
-    color:theme.palette.appText.light.primary
+    color: theme.palette.appText.light.primary
 })) as typeof Typography
 
 
@@ -48,12 +53,12 @@ export const SingleAuthor = ({ fullname, description, articlesNumber, img, insta
 
             <Avatar src={img} />
 
-            <Typography color={'appText.black'} fontSize={{ xs: 16, lg: 20 }} fontWeight='500'>{fullname}</Typography>
+            <Typography color={'appText.black'} fontSize={{ xs: 18, lg: 20 }} fontWeight='500'>{fullname}</Typography>
 
-            <Description  fontSize={{ xs: 14, lg: 16 }} fontWeight={500} >{description}</Description>
+            <Description fontSize={{ xs: 14, lg: 16 }} fontWeight={500} >{description}</Description>
 
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, justifyContent: 'space-between' }}>
-                
+
                 <ItemFrame href={telegram}>
                     <Telegram />
                     <Typography>کانال تلگرام</Typography>
@@ -66,7 +71,8 @@ export const SingleAuthor = ({ fullname, description, articlesNumber, img, insta
 
             </Box>
 
-            <Typography color={'appText.black'} fontSize={{ xs: 20, lg: 24 }} sx={{ mt: 3 }} fontWeight={600} >{articlesNumber} مقاله ثبت شده</Typography>
+            <Typography color={'appText.black'} fontSize={{ xs: 20, lg: 24 }} sx={{ mt: { lg: 3 } }} fontWeight={600} >{articlesNumber} مقاله ثبت شده</Typography>
+            
         </Box>
     )
 }
