@@ -18,12 +18,16 @@ export interface BlogAuthorType {
 }
 
 export interface BlogType {
-    id:string,
+    id: string,
     author: BlogAuthorType,
     title: string,
     date: string,
     tags?: Array<{ title: string, id: string }>
     description: string,
     img: string,
-    subSections?: Array<{ title: string, id: string, description: string }>
+    subSections?: Array<{
+        title: string ,
+        id: string,
+        description: string ///String Or Html
+    }>
 }

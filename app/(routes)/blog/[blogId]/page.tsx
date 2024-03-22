@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import React from 'react'
 import { PageContainer } from './components/PageContainer'
 import { Divider, Gift, Shortcut } from '@/_components'
-import { Author, BesideTitle, Breadcrumbs, RelatedBlogs } from './components'
+import { Author, BesideTitle, Breadcrumbs, Content, RelatedBlogs } from './components'
 import { blogDetail } from './data.mock'
 import { Box, Grid } from '@mui/material'
 
@@ -22,7 +22,7 @@ export default function page() {
                 </Grid>
 
                 <Grid item xs={12} lg={7}>
-                    Content
+                    <Content {...blogDetail}/>
                 </Grid>
 
                 <Grid item xs={0} lg={2} >
