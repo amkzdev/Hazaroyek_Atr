@@ -34,6 +34,9 @@ export const theme = createTheme({
         },
         red:{
             25:'rgba(217, 191, 191, 1)'
+        },
+        alerts:{
+            alert:'rgba(179, 38, 30, 1)'
         }
     }
 })
@@ -55,6 +58,9 @@ declare module '@mui/material/styles' {
             dark: {
                 support: string
             }
+        },
+        alerts:{
+            alert:string
         }
     }
 
@@ -73,6 +79,9 @@ declare module '@mui/material/styles' {
         navy: {
             25:string
             75: string,
+        },
+        alerts:{
+            alert:string
         }
     }
 }
