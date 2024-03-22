@@ -39,6 +39,9 @@
       "@icons": [
         "./_assets/icons"
       ],
+      "@components": [
+        "./_components"
+      ],
     }
   },
   "include": [
