@@ -2,7 +2,7 @@
 
 import { Box, styled } from "@mui/material";
 
-export const HeaderContainer = styled(Box)(({ theme }) => ({
+export const FooterContainer = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.body.dark,
     color:'white',
     height: '100px',
@@ -13,3 +13,11 @@ export const HeaderContainer = styled(Box)(({ theme }) => ({
     margin: '0 auto',
     fontSize:20
 })) as typeof Box
+
+
+
+export const Footer = () => {
+  return (
+    <FooterContainer>فوتر فروشگاه</FooterContainer>
+  )
+}
