@@ -7,3 +7,12 @@ export interface BlogSingleItem {
     date: string,
     id: string
 }
+
+export interface BlogAuthorType {
+    fullname: string,
+    img: string
+    description: string,
+    telegram: string,
+    instagram: string,
+    articlesNumber: number
+}
