@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import React from 'react'
 import { PageContainer } from './components/PageContainer'
 import { Divider, Gift, Shortcut } from '@/_components'
-import { Author, BesideTitle, Breadcrumbs, Content, RelatedBlogs } from './components'
+import { Author, BesideTitle, Breadcrumbs, Comments, Content, RelatedBlogs } from './components'
 import { blogDetail } from './data.mock'
 import { Box, Grid } from '@mui/material'
 
@@ -33,6 +33,10 @@ export default function page() {
             <Divider />
 
             <Author {...blogDetail.author} />
+
+            <Divider/>
+
+            <Comments {...blogDetail} />
 
             <Box sx={{ display: { lg: 'none', xs: 'flex' }, flexDirection: 'column', gap: 4 }}>
                 <Divider />
