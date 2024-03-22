@@ -3,6 +3,8 @@ import React from 'react'
 import { BlogType } from '@/_types'
 import { Box, Typography } from '@mui/material'
 import { CommentsSlider } from './components/CommentsSlider'
+import { CommentPopUp } from './components/CommentPopup/CommentPopUp'
+import { Plus } from '@/_assets/icons'
 
 export const Comments = ({ commentsCount, commentsUserCount, comments }: BlogType) => {
 
@@ -16,6 +18,13 @@ export const Comments = ({ commentsCount, commentsUserCount, comments }: BlogTyp
                 {!!commentsCount && <Typography fontSize={{ xs: 16, lg: 20 }} color={'appText.light.secondary'}>{commentsCount} دیدگاه از {commentsUserCount} نفر</Typography>}
                 {!isUserLoggedIn && <Typography color={'alerts.alert'} fontWeight={500} fontSize={{ xs: 16, lg: 20 }}>برای ثبت دیدگاه شما باید عضو وبسایت هزار و یک عطر باشید.</Typography>}
             </Box>
+
+            <CommentPopUp mode='add'>
+                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, color: 'appText.light.primary', alignItems: 'center' }} >
+                    <Plus />
+                    <Typography fontWeight={500} fontSize={{ xs: 16, lg: 20 }}>اضافه کردن دیدگاه</Typography>
+                </Box>
+            </CommentPopUp>
 
             <CommentsSlider comments={comments} />
         </Box>
