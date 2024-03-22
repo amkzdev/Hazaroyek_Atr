@@ -36,7 +36,7 @@ const Description = styled(Typography)(({ theme }) => ({
     [theme.breakpoints.down('lg')]: {
         maxHeight: '6rem',
     },
-    [theme.breakpoints.down('lg')]:{textAlign:'center'},
+    [theme.breakpoints.down('lg')]: { textAlign: 'center' },
     textAlign: 'right',
     lineHeight: '1.5rem',
     overflow: 'hidden',
@@ -49,18 +49,22 @@ const Description = styled(Typography)(({ theme }) => ({
 
 export const Author = ({ fullname, description, articlesNumber, img, instagram, telegram }: BlogAuthorType) => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 4, px: { lg: 14 } , alignItems:'center' }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 4, px: { lg: 14 }, alignItems: 'center' }}>
+
+
+            <Typography sx={{ display: { lg: 'none' } }} fontSize={24} color='appText.black' fontWeight={600} align='center'>نویسنده مقاله </Typography>
 
             <Avatar src={img} />
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4.5, alignItems: {xs:'center' , lg:'start'} }}>
+
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4.5, alignItems: { xs: 'center', lg: 'start' } }}>
 
 
                 <Typography color={'appText.black'} fontSize={{ xs: 18, lg: 20 }} fontWeight='500'>{fullname}</Typography>
 
                 <Description fontSize={{ xs: 14, lg: 16 }} fontWeight={500} >{description}</Description>
 
-                <Box sx={{ display: 'flex', flexDirection: {xs:'column', lg:'row'}, justifyContent: 'space-between', alignItems: 'center', gap: 6, width: '100%' }}>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, justifyContent: 'space-between', alignItems: 'center', gap: 6, width: '100%' }}>
 
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, justifyContent: 'space-between' }}>
 
