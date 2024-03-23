@@ -70,7 +70,8 @@ export const blogDetail: BlogType = {
             fullname: 'محمد پارسا محلوجی',
             id: 'sdfsdf',
             likesCount: 4598,
-            img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg'
+            img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg',
+            repliesCount:0
         }
         ,
         {
@@ -80,7 +81,8 @@ export const blogDetail: BlogType = {
             fullname: 'محمد رضا گلزار',
             id: 'sdfsdf',
             likesCount: 141,
-            img: 'https://jument.style/common/upload/blog/1689237534.webp'
+            img: 'https://jument.style/common/upload/blog/1689237534.webp',
+            repliesCount:4
         }
         ,
         {
@@ -90,7 +92,8 @@ export const blogDetail: BlogType = {
             fullname: 'محمد پارسا محلوجی',
             id: 'sdfsdf',
             likesCount: 41,
-            img: 'https://files.namnak.com/users/sf/aup/202303/95_pics/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1.jpg'
+            img: 'https://files.namnak.com/users/sf/aup/202303/95_pics/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1.jpg',
+            repliesCount:12
         },
         {
             date: '26 اردیبهشت 1402',
@@ -99,7 +102,8 @@ export const blogDetail: BlogType = {
             fullname: 'محمد پارسا محلوجی',
             id: 'sdfsdf',
             likesCount: 4598,
-            img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg'
+            img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg',
+            repliesCount:10
         }
 
     ]

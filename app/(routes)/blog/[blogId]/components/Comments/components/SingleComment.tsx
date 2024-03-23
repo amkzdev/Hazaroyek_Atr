@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CommentType } from '@types'
 import { Avatar, Box, Button, Grid, Typography, styled } from '@mui/material'
-import { Reply, Substract, ThumbsUp } from '@/_assets/icons'
+import { ArrowDropLeft, Reply, Substract, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
 
 
@@ -13,7 +13,8 @@ const Container = styled(Grid)(({ theme }) => ({
         borderRadius: theme.spacing(2),
         boxSizing: 'border-box',
         margin: '4px',
-        direction: 'rtl'
+        direction: 'rtl',
+        height: `calc(100% - ${theme.spacing(2)})`
     },
 })) as typeof Grid
 
@@ -43,10 +44,10 @@ const IntractIcon = styled(Box)(({ theme, color }) => ({
 
 export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType & { blogImage: string, blogTitle: string }) => {
 
-    const { fullname, img, date, description, dislikeCount, id, likesCount } = comment
+    const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount } = comment
 
     return (
-        <Container container direction={'row-reverse'} >
+        <Container container direction={'row-reverse'} justifyContent={'stretch'} >
 
             <Grid item xs={12}>
                 <Box className='content' sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -66,7 +67,7 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
                         <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }}>{description}</Typography>
                     </Box>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2,justifyContent:'space-between', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, justifyContent: 'space-between', alignItems: 'center' }}>
 
                         <CustomButton>
                             <Substract />
@@ -89,7 +90,7 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
             </Grid>
 
             <Grid item xs={4}>
-                <Box className='content' sx={{ flexDirection: 'row', display: 'flex' , justifyContent:'space-around', gap: 1, alignItems: 'center' }}>
+                <Box className='content' sx={{ flexDirection: 'row', display: 'flex', justifyContent: 'space-around', gap: 1, alignItems: 'center' }}>
                     <IntractIcon color='alerts.success.light' >
                         <ThumbsUp />
                         <Typography>{likesCount}</Typography>
@@ -103,7 +104,14 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
             </Grid>
             <Grid item xs={8}>
-                <Box className='content'>{fullname}</Box>
+                <CustomButton component={Box} className='content' >
+                    {!!repliesCount
+                        ? <>
+                            <Typography>مشاهده {repliesCount} پاسخ</Typography>
+                            <ArrowDropLeft />
+                        </>
+                        : <Typography color={'navy.75'}>به دیدگاه پاسخی داده نشده.</Typography>}
+                </CustomButton>
 
             </Grid>
 

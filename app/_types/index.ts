@@ -24,6 +24,7 @@ export interface CommentType {
     description: string,
     likesCount: number,
     dislikeCount: number,
+    repliesCount:number
     img: string
 }
 
