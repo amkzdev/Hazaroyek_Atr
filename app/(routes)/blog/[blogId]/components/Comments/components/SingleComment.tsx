@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { CommentType } from '@types'
 import { Avatar, Box, Button, Grid, Typography, styled } from '@mui/material'
-import { ArrowDropLeft, Reply, Substract, ThumbsUp } from '@/_assets/icons'
+import { ArrowDropLeft, Minus, Reply, Substract, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
 
 
 const Container = styled(Grid)(({ theme }) => ({
     '& .content': {
         backgroundColor: theme.palette.body.light,
-        padding: theme.spacing(1.75),
+        padding: theme.spacing(2),
         borderRadius: theme.spacing(2),
         boxSizing: 'border-box',
         margin: '4px',
@@ -46,6 +46,8 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
     const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount } = comment
 
+    const [viewMore, setViewMore] = useState<boolean>(false)
+
     return (
         <Container container direction={'row-reverse'} justifyContent={'stretch'} >
 
@@ -63,15 +65,15 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
                     </Box>
 
-                    <Box >
-                        <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }}>{description}</Typography>
+                    <Box sx={{ WebkitLineClamp: !viewMore ? 4 : '30000000', WebkitBoxOrient: !viewMore ? 'vertical' : 'unset', display: '-webkit-box', textOverflow: 'ellipsis', transition: 'all ease 4s', overflow: viewMore ? 'visible' :'hidden', maxHeight: !viewMore ? '5.5rem' : '100000px' }} >
+                        <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }} sx={{minHeight:'5.5rem'}}>{description}</Typography>
                     </Box>
 
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, justifyContent: 'space-between', alignItems: 'center' }}>
 
-                        <CustomButton>
-                            <Substract />
-                            <Typography>بیشتر</Typography>
+                        <CustomButton onClick={() => setViewMore(!viewMore)}>
+                            {viewMore ? <Minus  /> : <Substract  />}
+                            <Typography>{viewMore ? 'کمتر' : 'بیشتر'}</Typography>
                         </CustomButton>
 
                         <CommentPopUp mode='reply' blogImage={blogImage} blogTitle={blogTitle} targetComment={comment}>
