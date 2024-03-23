@@ -29,14 +29,17 @@ export const theme = createTheme({
             black: 'rgba(48, 51, 55, 1)'
         },
         navy: {
-            25:'rgba(204, 204, 217, 1)',
+            25: 'rgba(204, 204, 217, 1)',
             75: 'rgba(102, 102, 140, 1)'
         },
-        red:{
-            25:'rgba(217, 191, 191, 1)'
+        gray: {
+            75: 'rgba(244, 244, 244, 1)'
         },
-        alerts:{
-            alert:'rgba(179, 38, 30, 1)'
+        red: {
+            25: 'rgba(217, 191, 191, 1)'
+        },
+        alerts: {
+            alert: 'rgba(179, 38, 30, 1)'
         }
     }
 })
@@ -44,14 +47,17 @@ export const theme = createTheme({
 
 declare module '@mui/material/styles' {
     interface Palette {
-        body: Palette['primary'] & { primary: string  , secondary: string},
+        body: Palette['primary'] & { primary: string, secondary: string },
         navy: {
-            25:string
+            25: string
             75: string,
         },
-        red:{
-            25:string
-        }
+        red: {
+            25: string
+        },
+        gray: {
+            75: 'rgba(244, 244, 244, 1)'
+        },
         appText: {
             light: Palette['primary'] & { primary: string, secondary: string },
             black: string,
@@ -59,13 +65,13 @@ declare module '@mui/material/styles' {
                 support: string
             }
         },
-        alerts:{
-            alert:string
+        alerts: {
+            alert: string
         }
     }
 
     interface PaletteOptions {
-        body?: PaletteOptions['primary'] & { primary: string , secondary: string},
+        body?: PaletteOptions['primary'] & { primary: string, secondary: string },
         appText?: {
             light: { primary: string, secondary: string },
             black: string,
@@ -73,15 +79,18 @@ declare module '@mui/material/styles' {
                 support: string
             }
         },
-        red:{
-            25:string
+        red: {
+            25: string
         }
         navy: {
-            25:string
+            25: string
             75: string,
         },
-        alerts:{
-            alert:string
+        gray: {
+            75: string
+        },
+        alerts: {
+            alert: string
         }
     }
 }
