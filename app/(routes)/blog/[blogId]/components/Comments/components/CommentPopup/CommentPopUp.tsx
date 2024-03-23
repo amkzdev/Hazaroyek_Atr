@@ -5,6 +5,7 @@ import { CommentType } from '@/_types'
 import { Avatar, Box, Button, TextField, Typography, styled } from '@mui/material'
 import { createPortal } from 'react-dom'
 import { Add, Close } from '@/_assets/icons'
+import { SuccessAdded } from '../SuccessAdded'
 
 const BlogImage = styled('img')(({ theme }) => ({
     width: '240px',
@@ -95,13 +96,15 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
+    const [isCommentAdded, setCommentStatus] = useState<boolean>(false)
+
     return (
         <>
             <Box onClick={() => setIsModalOpen(true)} sx={{ cursor: 'pointer' }}>
                 {children}
             </Box>
 
-            {isModalOpen && createPortal(<PopUpContainer>
+            {isModalOpen && !isCommentAdded && createPortal(<PopUpContainer>
                 <PopUpContent>
 
                     <CloseButton onClick={() => setIsModalOpen(false)}><Close width={20} height={20} /></CloseButton>
@@ -123,7 +126,7 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
                         placeholder='دیدگاه خود را بنویسید.'
                     />
 
-                    <SendButton>
+                    <SendButton onClick={() => setCommentStatus(true)}>
                         <Typography>ثبت دیدگاه</Typography>
                         <Add />
                     </SendButton>
@@ -131,5 +134,8 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
                 </PopUpContent>
             </PopUpContainer>
                 , document.body)}
+
+
+            {isCommentAdded && <SuccessAdded toggleOpen={() => setCommentStatus(false)} />}
         </>)
 }
