@@ -65,14 +65,14 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
                     </Box>
 
-                    <Box sx={{ WebkitLineClamp: !viewMore ? 4 : '30000000', WebkitBoxOrient: !viewMore ? 'vertical' : 'unset', display: '-webkit-box', textOverflow: 'ellipsis', transition: 'all ease 4s', overflow: viewMore ? 'visible' :'hidden', maxHeight: !viewMore ? '5.5rem' : '100000px' }} >
-                        <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }} sx={{minHeight:'5.5rem'}}>{description}</Typography>
+                    <Box sx={{ WebkitLineClamp: !viewMore ? 4 : 30000000, WebkitBoxOrient: !viewMore ? 'vertical' : 'unset', display: '-webkit-box', textOverflow: 'ellipsis', transition: 'all ease 1s', overflow: viewMore ? 'visible' : 'hidden', maxHeight: !viewMore ? { xs: '5rem', lg: '5.5rem' } : '100000px' }} >
+                        <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }} sx={{ minHeight: '5.5rem' }}>{description}</Typography>
                     </Box>
 
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, justifyContent: 'space-between', alignItems: 'center' }}>
 
                         <CustomButton onClick={() => setViewMore(!viewMore)}>
-                            {viewMore ? <Minus  /> : <Substract  />}
+                            {viewMore ? <Minus /> : <Substract />}
                             <Typography>{viewMore ? 'کمتر' : 'بیشتر'}</Typography>
                         </CustomButton>
 
