@@ -29,7 +29,7 @@ export const Comments = ({ commentsCount, commentsUserCount, comments, img, titl
                 </CommentPopUp>
             </Box>
 
-            <CommentsSlider comments={comments} />
+            <CommentsSlider blogImg={img} blogTitle={title} comments={comments} />
         </Box>
     )
 }

@@ -113,7 +113,7 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
 
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, lg: 4 } }}>
                             <Typography fontSize={{ xs: 16, lg: 18 }} color='appText.black' fontWeight={700}>دیدگاه خود را برای این مقاله بنویسید</Typography>
-                            {mode == 'reply' && <Typography fontSize={{ xs: 16, lg: 18 }} fontWeight={500}>در پاسخ به دیدگاه {targetComment?.fullname}</Typography>}
+                            {mode == 'reply' && <Typography color={'navy.75'} fontSize={{ xs: 16, lg: 18 }} fontWeight={500}>در پاسخ به دیدگاه {targetComment?.fullname}</Typography>}
                             <Typography fontSize={{ xs: 16, lg: 20 }} color='appText.black' fontWeight={700}>{blogTitle}</Typography>
                         </Box>
 

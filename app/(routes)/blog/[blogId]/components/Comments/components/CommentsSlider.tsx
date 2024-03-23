@@ -7,7 +7,7 @@ import { BlogType } from '@/_types';
 import { SingleComment } from './SingleComment';
 
 
-export const CommentsSlider = ({ comments }: { comments: BlogType['comments'] }) => {
+export const CommentsSlider = ({ comments  , blogImg , blogTitle}: { comments: BlogType['comments'], blogImg :string , blogTitle:string }) => {
     return (
         <Box sx={{width:'100%' }}>
 
@@ -15,30 +15,33 @@ export const CommentsSlider = ({ comments }: { comments: BlogType['comments'] })
                 spaceBetween={50}
                 slidesPerView={3}
                 modules={[Navigation]}
-                navigation={true}
                 dir='ltr'
                 breakpoints={{
                     300: {
                         slidesPerView: 1,
-                        spaceBetween: 10
+                        spaceBetween: 10,
+                        navigation:false
                     },
                     600: {
                         slidesPerView: 2,
-                        spaceBetween: 35
+                        spaceBetween: 35,
+                        navigation:true
+
                     },
                     1000: {
                         slidesPerView: 3,
-                        spaceBetween: 50
+                        spaceBetween: 50,
+                        navigation:true
                     }
                 }}
                 style={{
                     ["--swiper-theme-color" as string]: "rgba(255, 204, 102, 1)",
-                    height:'300px'
+                    // height:'300px'
                     // paddingBottom: '53px'
                 }}
             >
                 {comments?.map(item => <SwiperSlide style={{}}>
-                    <SingleComment {...item} />
+                    <SingleComment blogImage={blogImg} blogTitle={blogTitle}  {...item} />
                 </SwiperSlide>)}
                 {/* <SwiperSlide>sdfsdf</SwiperSlide> */}
                 {/* <CustomSlide><Image alt='mag-1' src={mag1} fill style={{ objectFit: 'contain' }} /></CustomSlide>
