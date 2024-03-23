@@ -22,8 +22,8 @@ const Textarea = styled('textarea')(({ theme }) => ({
     outline: 'none',
     fontSize: theme.spacing(2),
     width: '100%',
-    boxSizing:'border-box',
-    ':placeholder-shown':{color:theme.palette.navy[25]}
+    boxSizing: 'border-box',
+    ':placeholder-shown': { color: theme.palette.navy[25] }
 })) as typeof TextField
 
 
@@ -38,7 +38,7 @@ const CloseButton = styled(Box)(({ theme }) => ({
     aspectRatio: 1,
     cursor: 'pointer',
     display: 'flex',
-    ':hover':{backgroundColor:theme.palette.grey[300]}
+    ':hover': { backgroundColor: theme.palette.grey[300] }
 })) as typeof Box
 
 
@@ -58,6 +58,37 @@ const SendButton = styled(Button)(({ theme }) => ({
 })) as typeof Button
 
 
+const PopUpContainer = styled(Box)(({ theme }) => ({
+    display: 'flex', flexDirection: 'row',
+    justifyContent: 'center',
+    backdropFilter: 'brightness(0.5)',
+    zIndex: 4,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    alignItems: 'center'
+})) as typeof Box
+
+
+const PopUpContent = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    [theme.breakpoints.up('lg')]: {
+        padding: `${theme.spacing(7)} ${theme.spacing(12)}`,
+        minWidth: '800px'
+    },
+    padding: `${theme.spacing(8)} ${theme.spacing(8)}`,
+    boxSizing: 'border-box',
+    gap: theme.spacing(4),
+    flexDirection: 'column',
+    alignItems: 'center',
+    minWidth: '60vw',
+    backgroundColor: 'white',
+    borderRadius: theme.spacing(3),
+    position: 'relative'
+})) as typeof Box
+
 
 
 export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogImage }: { mode: 'add' | 'reply', targetComment?: CommentType, children: ReactNode, blogTitle: string, blogImage: string }) => {
@@ -70,8 +101,8 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
                 {children}
             </Box>
 
-            {isModalOpen && createPortal(<Box sx={{ display: 'flex', flexDirection: 'row' , justifyContent: 'center', backdropFilter: 'brightness(0.5)', zIndex: 4, position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', alignItems: 'center' }}>
-                <Box sx={{ display: 'flex', py: { xs: 8, lg: 7 }, px: { xs: 8, lg: 12 },boxSizing:'border-box' ,  gap: 4, flexDirection: 'column', alignItems: { xs: 'center', lg: 'center' }, minWidth: { xs: '60vw', lg: '400px' }, background: 'white', borderRadius: 6, position: 'relative' }}>
+            {isModalOpen && createPortal(<PopUpContainer>
+                <PopUpContent>
 
                     <CloseButton onClick={() => setIsModalOpen(false)}><Close width={20} height={20} /></CloseButton>
 
@@ -97,7 +128,8 @@ export const CommentPopUp = ({ mode, targetComment, children, blogTitle, blogIma
                         <Add />
                     </SendButton>
 
-                </Box>
-            </Box>, document.body)}
+                </PopUpContent>
+            </PopUpContainer>
+                , document.body)}
         </>)
 }
