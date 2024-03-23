@@ -39,7 +39,11 @@ export const theme = createTheme({
             25: 'rgba(217, 191, 191, 1)'
         },
         alerts: {
-            alert: 'rgba(179, 38, 30, 1)'
+            alert: 'rgba(179, 38, 30, 1)',
+            success:{
+                light:'rgba(98, 197, 120, 1)'
+            },
+            light:'rgba(236, 89, 81, 1)'
         }
     }
 })
@@ -66,7 +70,11 @@ declare module '@mui/material/styles' {
             }
         },
         alerts: {
-            alert: string
+            alert: string,
+            success:{
+                light:string
+            },
+            light:string
         }
     }
 
@@ -90,7 +98,11 @@ declare module '@mui/material/styles' {
             75: string
         },
         alerts: {
-            alert: string
+            alert: string,
+            success:{
+                light:string
+            },
+            light:string
         }
     }
 }

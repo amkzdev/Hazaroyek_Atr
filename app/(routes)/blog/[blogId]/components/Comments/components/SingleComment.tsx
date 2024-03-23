@@ -1,22 +1,20 @@
+import React from 'react'
+
 import { CommentType } from '@types'
 import { Avatar, Box, Button, Grid, Typography, styled } from '@mui/material'
-import React from 'react'
-import { Add, Plus, Reply, Substract } from '@/_assets/icons'
+import { Reply, Substract, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
 
 
 const Container = styled(Grid)(({ theme }) => ({
     '& .content': {
         backgroundColor: theme.palette.body.light,
-        padding: theme.spacing(2),
-        // margin:'2px',
+        padding: theme.spacing(1.75),
         borderRadius: theme.spacing(2),
         boxSizing: 'border-box',
         margin: '4px',
         direction: 'rtl'
     },
-    // height:'300px',
-    // background: 'red',
 })) as typeof Grid
 
 
@@ -34,10 +32,18 @@ const CustomButton = styled(Button)(({ theme }) => ({
 })) as typeof Box
 
 
+const IntractIcon = styled(Box)(({ theme, color }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing(1),
+    alignItems: 'center',
+    color: color?.toString()
+})) as typeof Box
 
-export const SingleComment = ({ blogImage , blogTitle ,  ...comment}: CommentType & { blogImage: string, blogTitle: string }) => {
 
-    const { fullname, img, date, description, dislikeCount, id, likesCount  } = comment
+export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType & { blogImage: string, blogTitle: string }) => {
+
+    const { fullname, img, date, description, dislikeCount, id, likesCount } = comment
 
     return (
         <Container container direction={'row-reverse'} >
@@ -60,7 +66,7 @@ export const SingleComment = ({ blogImage , blogTitle ,  ...comment}: CommentTyp
                         <Typography color='appText.light.primary' fontSize={{ xs: 12, lg: 14 }}>{description}</Typography>
                     </Box>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2,justifyContent:'space-between', alignItems: 'center' }}>
 
                         <CustomButton>
                             <Substract />
@@ -83,9 +89,16 @@ export const SingleComment = ({ blogImage , blogTitle ,  ...comment}: CommentTyp
             </Grid>
 
             <Grid item xs={4}>
-                <Box className='content'>
-                    {dislikeCount}
-                    {likesCount}
+                <Box className='content' sx={{ flexDirection: 'row', display: 'flex' , justifyContent:'space-around', gap: 1, alignItems: 'center' }}>
+                    <IntractIcon color='alerts.success.light' >
+                        <ThumbsUp />
+                        <Typography>{likesCount}</Typography>
+                    </IntractIcon>
+
+                    <IntractIcon color='alerts.light' >
+                        <ThumbsUp />
+                        <Typography>{dislikeCount}</Typography>
+                    </IntractIcon>
                 </Box>
 
             </Grid>
