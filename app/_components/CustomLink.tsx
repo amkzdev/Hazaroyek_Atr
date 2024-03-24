@@ -9,5 +9,5 @@ export const CustomLink = styled(Link)(({ theme }) => ({
     padding: theme.spacing(2),
     borderRadius: theme.spacing(2),
     textDecoration:'none',
-})) as typeof MuiLink
+})) as  any
 
