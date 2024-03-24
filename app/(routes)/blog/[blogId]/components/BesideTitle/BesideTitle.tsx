@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import { BlogType } from '@/_types'
 import { Box, Typography, styled } from '@mui/material'
+import Link from 'next/link'
 
 const Container = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -11,8 +12,11 @@ const Container = styled(Box)(({ theme }) => ({
     gap: theme.spacing(1.5),
     paddingRight: theme.spacing(2),
     borderRight: theme.palette.navy[25],
-    position:'sticky',
-    top:'100px'
+    borderRightStyle:'solid',
+    borderRightWidth:'1px',
+    height:'fit-content'
+    // position:'sticky',
+    // top:'100px'
 })) as typeof Box
 
 export const BesideTitle = ({ titles }: { titles: BlogType['subSections'], activeTitleId?: string }) => {
@@ -43,9 +47,9 @@ export const BesideTitle = ({ titles }: { titles: BlogType['subSections'], activ
 
     return (
         <Container>
-            {titles?.map(t => <Typography fontSize={16} fontWeight={activeTitleId == t.id ?  500 :400} color={activeTitleId == t.id ? 'body.dark' : 'appText.light.secondary'}>
+            {titles?.map(t => <Link href={`#section-${t.id}`} style={{textDecoration:'none'}}><Typography  fontSize={16} fontWeight={activeTitleId == t.id ?  500 :400} color={activeTitleId == t.id ? 'body.dark' : 'appText.light.secondary'}>
                 {t.title}
-            </Typography>)}
+            </Typography></Link>)}
         </Container>
     )
 }
