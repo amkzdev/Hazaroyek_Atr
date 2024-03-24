@@ -1,9 +1,9 @@
-import { Box, Grid, Typography, formHelperTextClasses, styled } from '@mui/material'
 import React from 'react'
+import { Box, Grid, Typography } from '@mui/material'
 import { data } from './data.mock'
 import Link from 'next/link'
 import { ArrowDropLeft } from '@/_assets/icons'
-import { BlogSingleItem, BlogType } from '@/_types'
+import { BlogSingleItem } from '@/_types'
 
 
 const Blog = ({ img, id, title, description }: BlogSingleItem) => {
