@@ -31,7 +31,7 @@ export const Comments = ({ commentsCount, commentsUserCount, comments, img, titl
 
             <CommentsSlider blogImg={img} blogTitle={title} comments={comments} />
 
-            <Box id='replayBox' sx={{ display: 'flex', flexDirection: 'column', gap: 4  , px:{xs:2 , lg:6}, boxSizing:'border-box' , width:'100%' }}> </Box>
+            <Box id='replayBox' sx={{ display: 'flex', flexDirection: 'column', gap: 6  , px:{xs:2 , lg:6}, boxSizing:'border-box' , width:'100%' }}> </Box>
         </Box>
     )
 }
