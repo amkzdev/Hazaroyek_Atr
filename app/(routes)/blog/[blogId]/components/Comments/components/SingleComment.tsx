@@ -6,6 +6,7 @@ import { ArrowDropLeft, ChevronDown, Minus, Reply, Substract, ThumbsDown, Thumbs
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
 import { createPortal } from 'react-dom'
 import { RepliesComponent } from './RepliesComponent/RepliesComponent'
+import { SpecialComment } from './SpecialComment'
 
 
 const Container = styled(Grid)(({ theme }) => ({
@@ -49,7 +50,7 @@ export const IntractIcon = styled(Box)(({ theme, color }) => ({
 
 export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType & { blogImage: string, blogTitle: string }) => {
 
-    const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount , replies } = comment
+    const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount , replies  , special} = comment
 
     const [viewMore, setViewMore] = useState<boolean>(false)
 
@@ -61,7 +62,9 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
             <Grid item xs={12} >
                 <Box className='content' sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2.5, alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2.5, alignItems: 'center' , justifyContent:'space-between' }}>
+                        <Box sx={{display:'flex'  , flexDirection:'row' , gap:2.5 , alignItems:'center'}}>
+
                         <Avatar src={img} sizes='60px' alt={fullname} sx={{ width: { xs: '50px', lg: '60px' }, height: { xs: '50px', lg: '60px' } }} />
 
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -69,6 +72,9 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
                             <Typography fontSize={{ xs: 14, lg: 16 }} fontWeight={700} color={'appText.light.primary'}> {fullname}</Typography>
                             <Typography fontSize={{ xs: 12, lg: 14 }} color='appText.light.secondary'>{date}</Typography>
                         </Box>
+                        </Box>
+
+                        {!!special && <SpecialComment />}
 
                     </Box>
 

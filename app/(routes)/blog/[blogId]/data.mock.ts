@@ -171,7 +171,9 @@ export const blogDetail: BlogType = {
             id: 'sdfsdf',
             likesCount: 4598,
             img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg',
-            repliesCount: 0
+            repliesCount: 0,
+            special:true
+            
         },
 
         {
