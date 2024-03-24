@@ -9,5 +9,6 @@ export const PageContainer = styled(Box)(({ theme  }) => ({
         gap:theme.spacing(6)
     },
     gap: theme.spacing(4),
-    maxWidth:'1280px'
+    maxWidth:'1280px',
+    margin: '0 auto'
 })) as typeof Box
