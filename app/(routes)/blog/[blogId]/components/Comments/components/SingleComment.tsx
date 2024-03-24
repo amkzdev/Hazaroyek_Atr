@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 
 import { CommentType } from '@types'
 import { Avatar, Box, Button, Grid, Typography, styled } from '@mui/material'
-import { ArrowDropLeft, Minus, Reply, Substract, ThumbsUp } from '@/_assets/icons'
+import { ArrowDropLeft, ChevronDown, Minus, Reply, Substract, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
+import { createPortal } from 'react-dom'
 
 
 const Container = styled(Grid)(({ theme }) => ({
     '& .content': {
-        backgroundColor: theme.palette.body.light,
+        ':not(.open)': {
+            backgroundColor: theme.palette.body.light,
+        },
         padding: theme.spacing(2),
         borderRadius: theme.spacing(2),
         boxSizing: 'border-box',
@@ -47,6 +50,8 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
     const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount } = comment
 
     const [viewMore, setViewMore] = useState<boolean>(false)
+
+    const [viewReplies, setViewReplies] = useState<boolean>(false)
 
     return (
         <Container container direction={'row-reverse'} justifyContent={'stretch'} >
@@ -106,17 +111,26 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
             </Grid>
             <Grid item xs={8}>
-                <CustomButton component={Box} className='content' >
+                <CustomButton onClick={() => repliesCount ? setViewReplies(!viewReplies) : null} component={Box} className={`content ${viewReplies ? 'open' : ''}`} >
                     {!!repliesCount
-                        ? <>
-                            <Typography>مشاهده {repliesCount} پاسخ</Typography>
-                            <ArrowDropLeft />
-                        </>
+                        ? (
+                            viewReplies ? <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, alignItems: 'center' }}>
+                                <Typography>پاسخ ها به دیدگاه {fullname}</Typography>
+                                <ChevronDown />
+                            </Box>
+                                : <>
+                                    <Typography>مشاهده {repliesCount} پاسخ</Typography>
+                                    <ArrowDropLeft />
+                                </>
+                        )
                         : <Typography color={'navy.75'}>به دیدگاه پاسخی داده نشده.</Typography>}
                 </CustomButton>
 
             </Grid>
 
+            {viewReplies &&  !!document?.querySelector('#replayBox') && createPortal(<>
+                جواب های کامت
+            </>, document?.querySelector('#replayBox') as Element)}
 
         </Container>
 

@@ -30,6 +30,8 @@ export const Comments = ({ commentsCount, commentsUserCount, comments, img, titl
             </Box>
 
             <CommentsSlider blogImg={img} blogTitle={title} comments={comments} />
+
+            <Box id='replayBox' sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}> </Box>
         </Box>
     )
 }
