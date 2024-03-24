@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { CustomButton, IntractIcon } from '../../SingleComment'
 import { ChevronDown, ChevronUp, Reply, ThumbsDown, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from '../../CommentPopup/CommentPopUp'
+import { LevelThree } from './LevelThree'
 
 export const LevelTwo = ({ comment, parentComment }: { comment: CommentType, parentComment: CommentType }) => {
 
@@ -13,16 +14,16 @@ export const LevelTwo = ({ comment, parentComment }: { comment: CommentType, par
 
     return (
         <>
-            <Grid container spacing={2} sx={{ boxSizing: 'border-box', width: "100%", p :2, borderRadius: 4, border: '1px solid #e2e2e2' }} >
+            <Grid container spacing={2} sx={{ boxSizing: 'border-box', width: "100%", p: 2, borderRadius: 4, border: '1px solid #e2e2e2' }} >
 
                 <Grid order={1} item xs={8} lg={3}>
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2.5, alignItems: { xs: 'start', lg: 'center' } }}>
 
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', gap: 1, flexWrap: 'wrap' }}>
 
-                            <Box sx={{ display: 'flex', flexDirection: 'row' , alignItems:'center', gap: 0.5, color: "appText.light.secondary" }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 0.5, color: "appText.light.secondary" }}>
                                 <Reply width={15} height={15} color='inherit' />
-                                <Typography>پاسخ به {parentComment.fullname}</Typography>
+                                <Typography fontSize={{ xs: 14, lg: 16 }}>پاسخ به {parentComment.fullname}</Typography>
                             </Box>
 
                             <Typography fontSize={{ xs: 14, lg: 16 }} fontWeight={700} color={'appText.light.primary'}> {fullname}</Typography>
@@ -32,7 +33,7 @@ export const LevelTwo = ({ comment, parentComment }: { comment: CommentType, par
 
                             {!!repliesCount && <>
 
-                                <CustomButton onClick={() => setIsOpen(!isOpen)}  sx={{ backgroundColor: 'white' }}>
+                                <CustomButton onClick={() => setIsOpen(!isOpen)} sx={{ backgroundColor: 'white' }}>
                                     <Typography fontSize={14}>{repliesCount} پاسخ</Typography>
                                     {isOpen ? <ChevronUp width={15} height={15} /> : <ChevronDown width={15} height={15} />}
                                 </CustomButton></>}
@@ -72,6 +73,9 @@ export const LevelTwo = ({ comment, parentComment }: { comment: CommentType, par
 
 
             </Grid>
+
+            {isOpen && <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, pl: { xs: 2, lg: 6 } }}> {replies?.map(item => <LevelThree comment={item} parentComment={comment} />)}</Box>}
+
         </>
     )
 }

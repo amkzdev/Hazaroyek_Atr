@@ -56,9 +56,9 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
     const [viewReplies, setViewReplies] = useState<boolean>(false)
 
     return (
-        <Container container direction={'row-reverse'} justifyContent={'stretch'} >
+        <Container container direction={'row'} justifyContent={'stretch'} >
 
-            <Grid item xs={12}>
+            <Grid item xs={12} >
                 <Box className='content' sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
 
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2.5, alignItems: 'center' }}>

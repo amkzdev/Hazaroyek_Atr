@@ -15,7 +15,7 @@ export const CommentsSlider = ({ comments  , blogImg , blogTitle}: { comments: B
                 spaceBetween={50}
                 slidesPerView={3}
                 modules={[Navigation]}
-                dir='ltr'
+                dir='rtl'
                 breakpoints={{
                     300: {
                         slidesPerView: 1,
