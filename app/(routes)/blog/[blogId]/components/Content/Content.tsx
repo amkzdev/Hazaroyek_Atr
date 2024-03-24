@@ -27,7 +27,7 @@ export const Content = ({ title, description, img, subSections, date, tags }: Bl
 
             </Box>
 
-            {subSections?.map(item => <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, color: 'appText.light.primary' }}>
+            {subSections?.map(item => <Box className='blog-section' id={`section-${item.id}`} sx={{ display: 'flex', flexDirection: 'column', gap: 2, color: 'appText.light.primary' }}>
                 <Typography fontSize={{ xs: 16, lg: 20 }} fontWeight={500}>{item.title}</Typography>
                 <Box sx={{ fontSize: { xs: 14, lg: 16 } }} >
                     <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
