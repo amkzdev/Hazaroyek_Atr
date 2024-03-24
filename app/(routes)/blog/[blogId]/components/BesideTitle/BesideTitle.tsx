@@ -47,7 +47,7 @@ export const BesideTitle = ({ titles }: { titles: BlogType['subSections'], activ
 
     return (
         <Container>
-            {titles?.map(t => <Link href={`#section-${t.id}`} style={{textDecoration:'none'}}><Typography  fontSize={16} fontWeight={activeTitleId == t.id ?  500 :400} color={activeTitleId == t.id ? 'body.dark' : 'appText.light.secondary'}>
+            {titles?.map(t => <Link href={`#section-${t.id}`}  style={{textDecoration:'none'}}><Typography  fontSize={16} fontWeight={activeTitleId == t.id ?  500 :400} color={activeTitleId == t.id ? 'body.dark' : 'appText.light.secondary'}>
                 {t.title}
             </Typography></Link>)}
         </Container>

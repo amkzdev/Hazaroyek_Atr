@@ -16,7 +16,7 @@ export default function page() {
 
             <Breadcrumbs />
 
-            <Grid container spacing={4} >
+            <Grid container spacing={4} sx={{position:'relative'}} >
                 <Grid item xs={0} lg={3} sx={{ display: { xs: 'none', lg: 'flex' } }}>
                     <RelatedBlogs />
                 </Grid>
@@ -25,7 +25,7 @@ export default function page() {
                     <Content {...blogDetail}/>
                 </Grid>
 
-                <Grid item xs={0} lg={2} sx={{ display: { xs: 'none', lg: 'flex' } }} >
+                <Grid item xs={0} lg={2} sx={{ display: { xs: 'none', lg: 'flex' } , position:'sticky'  , top:'0px' , height:'fit-content' }} >
                     <BesideTitle activeTitleId='2' titles={blogDetail.subSections} />
                 </Grid>
             </Grid>
