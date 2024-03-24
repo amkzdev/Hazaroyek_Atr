@@ -7,7 +7,7 @@ import { BlogSingleItem, BlogType } from '@/_types'
 
 
 const Blog = ({ img, id, title, description }: BlogSingleItem) => {
-  return <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden', aspectRatio: 1.5 }}>
+  return <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden', aspectRatio: 1.35 , boxSizing:'border-box'}}>
 
     <img src={img} style={{ width: '100%', height: "100%", objectFit: 'cover' }} />
 
@@ -29,7 +29,7 @@ export const TopBlogs = () => {
   const spacing = 3
 
   return (
-    <Grid container spacing={spacing} sx={{height:{lg:900}}}>
+    <Grid container spacing={spacing} >
 
       <Grid item container spacing={spacing} xs={12} lg={4}>
 
