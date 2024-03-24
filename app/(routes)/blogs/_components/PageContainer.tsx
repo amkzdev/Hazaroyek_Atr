@@ -8,5 +8,6 @@ export const PageContainer = styled(Box)(({ theme  }) => ({
     [theme.breakpoints.up('lg')]:{
         gap:theme.spacing(6)
     },
-    gap: theme.spacing(4)
+    gap: theme.spacing(4),
+    maxWidth:'1280px'
 })) as typeof Box
