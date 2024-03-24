@@ -19,7 +19,6 @@ const NavButton = styled(Box)(({ theme, style }) => ({
         display: 'flex',
     },
     display: 'none',
-    zIndex: 100,
     borderRadius: '50%',
     padding: '4px',
     width: '2rem',
