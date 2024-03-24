@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 
 import { CommentType } from '@types'
 import { Avatar, Box, Button, Grid, Typography, styled } from '@mui/material'
-import { ArrowDropLeft, ChevronDown, Minus, Reply, Substract, ThumbsUp } from '@/_assets/icons'
+import { ArrowDropLeft, ChevronDown, Minus, Reply, Substract, ThumbsDown, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from './CommentPopup/CommentPopUp'
 import { createPortal } from 'react-dom'
+import { RepliesComponent } from './RepliesComponent/RepliesComponent'
 
 
 const Container = styled(Grid)(({ theme }) => ({
@@ -22,7 +23,7 @@ const Container = styled(Grid)(({ theme }) => ({
 })) as typeof Grid
 
 
-const CustomButton = styled(Button)(({ theme }) => ({
+export const CustomButton = styled(Button)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'row',
     gap: theme.spacing(1),
@@ -36,18 +37,19 @@ const CustomButton = styled(Button)(({ theme }) => ({
 })) as typeof Box
 
 
-const IntractIcon = styled(Box)(({ theme, color }) => ({
+export const IntractIcon = styled(Box)(({ theme, color }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: theme.spacing(1),
     alignItems: 'center',
-    color: color?.toString()
+    color: color?.toString(),
+    cursor:'pointer'
 })) as typeof Box
 
 
 export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType & { blogImage: string, blogTitle: string }) => {
 
-    const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount } = comment
+    const { fullname, img, date, description, dislikeCount, id, likesCount, repliesCount , replies } = comment
 
     const [viewMore, setViewMore] = useState<boolean>(false)
 
@@ -104,7 +106,7 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
                     </IntractIcon>
 
                     <IntractIcon color='alerts.light' >
-                        <ThumbsUp />
+                        <ThumbsDown />
                         <Typography>{dislikeCount}</Typography>
                     </IntractIcon>
                 </Box>
@@ -128,8 +130,8 @@ export const SingleComment = ({ blogImage, blogTitle, ...comment }: CommentType 
 
             </Grid>
 
-            {viewReplies &&  !!document?.querySelector('#replayBox') && createPortal(<>
-                جواب های کامت
+            {viewReplies && !!document?.querySelector('#replayBox') && createPortal(<>
+                <RepliesComponent replies={replies} />
             </>, document?.querySelector('#replayBox') as Element)}
 
         </Container>
