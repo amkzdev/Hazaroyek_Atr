@@ -84,7 +84,7 @@ const PopUpContent = styled(Box)(({ theme }) => ({
     gap: theme.spacing(4),
     flexDirection: 'column',
     alignItems: 'center',
-    minWidth: '60vw',
+    minWidth: '80vw',
     backgroundColor: 'white',
     borderRadius: theme.spacing(3),
     position: 'relative'
