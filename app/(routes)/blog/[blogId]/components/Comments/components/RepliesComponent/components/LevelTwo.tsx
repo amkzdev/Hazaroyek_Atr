@@ -4,38 +4,36 @@ import React, { useState } from 'react'
 import { CustomButton, IntractIcon } from '../../SingleComment'
 import { ChevronDown, ChevronUp, Reply, ThumbsDown, ThumbsUp } from '@/_assets/icons'
 import { CommentPopUp } from '../../CommentPopup/CommentPopUp'
-import { LevelTwo } from './LevelTwo'
 
-export const LevelOne = (comment: CommentType) => {
+export const LevelTwo = ({ comment, parentComment }: { comment: CommentType, parentComment: CommentType }) => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const { description, date, dislikeCount, fullname, id, img, likesCount, repliesCount, replies } = comment
 
-    console.log(isOpen, replies)
-
     return (
         <>
-            <Grid container spacing={2} sx={{ boxSizing: 'border-box', width: "100%" }} >
+            <Grid container spacing={2} sx={{ boxSizing: 'border-box', width: "100%", p :2, borderRadius: 4, border: '1px solid #e2e2e2' }} >
 
                 <Grid order={1} item xs={8} lg={3}>
                     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2.5, alignItems: { xs: 'start', lg: 'center' } }}>
-                        <Avatar src={img} sizes='60px' alt={fullname} sx={{ width: { xs: '50px', lg: '60px' }, height: { xs: '50px', lg: '60px' } }} />
 
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', gap: 1, flexWrap: 'wrap' }}>
 
-                            <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1.5, alignItems: 'center' }}>
-                                <Typography fontSize={{ xs: 14, lg: 16 }} fontWeight={700} color={'appText.light.primary'}> {fullname}</Typography>
-                                {!!repliesCount && <Typography fontSize={{ xs: 12, lg: 14 }} color='appText.light.secondary'>{repliesCount} پاسخ</Typography>}
+                            <Box sx={{ display: 'flex', flexDirection: 'row' , alignItems:'center', gap: 0.5, color: "appText.light.secondary" }}>
+                                <Reply width={15} height={15} color='inherit' />
+                                <Typography>پاسخ به {parentComment.fullname}</Typography>
                             </Box>
+
+                            <Typography fontSize={{ xs: 14, lg: 16 }} fontWeight={700} color={'appText.light.primary'}> {fullname}</Typography>
 
                             <Typography align='center' sx={{ display: { xs: 'block', lg: 'none' } }} fontSize={{ xs: 12, lg: 14 }} color='appText.light.secondary'>{date}</Typography>
 
 
                             {!!repliesCount && <>
 
-                                <CustomButton onClick={() => setIsOpen(!isOpen)}>
-                                    <Typography fontSize={14}>{isOpen ? 'پنهان کردن پاسخ ها' : 'نمایش پاسخ ها'}</Typography>
+                                <CustomButton onClick={() => setIsOpen(!isOpen)}  sx={{ backgroundColor: 'white' }}>
+                                    <Typography fontSize={14}>{repliesCount} پاسخ</Typography>
                                     {isOpen ? <ChevronUp width={15} height={15} /> : <ChevronDown width={15} height={15} />}
                                 </CustomButton></>}
                         </Box>
@@ -74,9 +72,6 @@ export const LevelOne = (comment: CommentType) => {
 
 
             </Grid>
-
-
-            {isOpen && <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, pl: { xs: 2, lg: 6 } }}> {replies?.map(item => <LevelTwo comment={item} parentComment={comment} />)}</Box>}
         </>
     )
 }
