@@ -24,8 +24,9 @@ export interface CommentType {
     description: string,
     likesCount: number,
     dislikeCount: number,
-    repliesCount:number
-    img: string
+    repliesCount: number
+    img: string,
+    replies?: Array<CommentType>
 }
 
 export interface BlogType {

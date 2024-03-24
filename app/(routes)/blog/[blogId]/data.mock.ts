@@ -71,7 +71,41 @@ export const blogDetail: BlogType = {
             id: 'sdfsdf',
             likesCount: 4598,
             img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg',
-            repliesCount:0
+            repliesCount: 0,
+            replies: [
+                {
+                    date: '26 اردیبهشت 1402',
+                    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی .',
+                    dislikeCount: 3414124,
+                    fullname: 'محمد جواب رضا گلزار',
+                    id: 'sdfsdf',
+                    likesCount: 141,
+                    img: 'https://jument.style/common/upload/blog/1689237534.webp',
+                    repliesCount: 4
+                },
+                {
+                    date: '26 اردیبهشت 1402',
+                    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی .',
+                    dislikeCount: 3414124,
+                    fullname: 'محمد جواب2 رضا گلزار',
+                    id: 'sdfsdf',
+                    likesCount: 141,
+                    img: 'https://jument.style/common/upload/blog/1689237534.webp',
+                    repliesCount: 4,
+                    replies: [
+                        {
+                            date: '26 اردیبهشت 1402',
+                            description: ' لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی . لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی . لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی . لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی .',
+                            dislikeCount: 324,
+                            fullname: 'محمد پارسا محلوجی',
+                            id: 'sdfsdf',
+                            likesCount: 41,
+                            img: 'https://files.namnak.com/users/sf/aup/202303/95_pics/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1.jpg',
+                            repliesCount: 12
+                        },
+                    ]
+                }
+            ]
         }
         ,
         {
@@ -82,7 +116,7 @@ export const blogDetail: BlogType = {
             id: 'sdfsdf',
             likesCount: 141,
             img: 'https://jument.style/common/upload/blog/1689237534.webp',
-            repliesCount:4
+            repliesCount: 4
         }
         ,
         {
@@ -93,7 +127,29 @@ export const blogDetail: BlogType = {
             id: 'sdfsdf',
             likesCount: 41,
             img: 'https://files.namnak.com/users/sf/aup/202303/95_pics/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1.jpg',
-            repliesCount:12
+            repliesCount: 12,
+            replies:[
+                {
+                    date: '26 اردیبهشت 1402',
+                    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی .',
+                    dislikeCount: 3414124,
+                    fullname: 'محمد جواب رضا گلزار',
+                    id: 'sdfsdf',
+                    likesCount: 141,
+                    img: 'https://jument.style/common/upload/blog/1689237534.webp',
+                    repliesCount: 4
+                },
+                {
+                    date: '26 اردیبهشت 1402',
+                    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است. لورم ایپسوم متن ساختگی .',
+                    dislikeCount: 3414124,
+                    fullname: 'محمد جواب33 رضا گلزار',
+                    id: 'sdfsdf',
+                    likesCount: 141,
+                    img: 'https://jument.style/common/upload/blog/1689237534.webp',
+                    repliesCount: 4
+                },
+            ]
         },
         {
             date: '26 اردیبهشت 1402',
@@ -103,7 +159,7 @@ export const blogDetail: BlogType = {
             id: 'sdfsdf',
             likesCount: 4598,
             img: 'https://media.hamshahrionline.ir/d/2020/09/04/4/4489522.jpg',
-            repliesCount:10
+            repliesCount: 10
         }
 
     ]
